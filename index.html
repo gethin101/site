@@ -2,128 +2,242 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Gethin — Portfolio</title>
+  <title>Gethin Portfolio</title>
+
+  <!-- Open Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
+    /* Light background outside the content strip */
     body {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      font-family: Georgia, serif;
+      margin: 0;
+      padding: 0;
+      background: #ececec;
+      font-family: 'Open Sans', sans-serif;
       line-height: 1.7;
       color: #222;
     }
 
-    h1, h2 {
-      margin-top: 60px;
+    /* Centered content strip */
+    .page {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #ffffff;
+      box-shadow: 0 0 25px rgba(0,0,0,0.15);
+    }
+
+    /* Header block */
+    .header {
+      padding: 30px 40px 0 40px;
+      text-align: center;
+    }
+
+    .header-title {
+      font-size: 2.6em;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #000;
+    }
+
+    .header-subtitle {
+      font-size: 0.95em;
       font-weight: 600;
+      color: #0055aa;
+      margin: 4px 0 18px 0; /* moved up slightly */
+      letter-spacing: 0.4px;
+    }
+
+    /* Navigation bar spanning the strip */
+    nav {
+      background: #000000;
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+      padding: 12px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 0.95em;
+      font-weight: 700; /* bold text */
+      padding: 6px 10px;
+      letter-spacing: 0.3px;
+    }
+
+    nav a:hover {
+      background: #333333;
+    }
+
+    /* Blue strip (#0040ff) */
+    .nav-underline {
+      width: 100%;
+      height: 10px;
+      background: #002db3;
+    }
+
+    /* Intro section under the nav bar */
+    .intro {
+      padding: 25px 40px 10px 40px;
+      font-size: 0.95em;
+      color: #333;
+    }
+
+    /* Inner content */
+    .content {
+      padding: 35px 40px 40px 40px;
     }
 
     .project {
-      margin-top: 50px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid #ddd;
+      margin-top: 40px;
+      padding-bottom: 35px;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    .project-title {
+      font-size: 1.4em;
+      font-weight: 600;
+      margin-bottom: 10px;
     }
 
     .project img {
       width: 100%;
-      border-radius: 6px;
-      margin: 20px 0;
-    }
-
-    .project-title {
-      font-size: 1.6em;
-      margin-bottom: 10px;
+      margin: 18px 0;
+      border-radius: 4px;
     }
 
     .description {
-      margin-top: 10px;
-      font-size: 1.05em;
+      font-size: 0.98em;
+      margin-top: 8px;
     }
   </style>
+
+  <script>
+    /* Scroll to a random project */
+    function goRandom() {
+      const projects = document.querySelectorAll('.project');
+      const random = projects[Math.floor(Math.random() * projects.length)];
+      random.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
 </head>
 
 <body>
 
-  <h1>Gethin</h1>
-  <p>I build things, write a lot, and care about making work that feels intentional.  
-  This portfolio is simple on purpose — it’s here to show the projects, not distract from them.</p>
+  <div class="page">
 
-  <!-- PROJECT 1 -->
-  <div class="project">
-    <div class="project-title">Project One</div>
-    <img src="images/project1.jpg" alt="Project One">
-    <div class="description">
-      Write a long, detailed explanation here.  
-      Talk about what the project is, why you made it, what you learned, and anything else that matters.
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-title">Gethin</div>
+      <div class="header-subtitle">JACK OF ALL TRADES; MASTER OF NONE.</div>
     </div>
-  </div>
 
-  <!-- PROJECT 2 -->
-  <div class="project">
-    <div class="project-title">Project Two</div>
-    <img src="images/project2.jpg" alt="Project Two">
-    <div class="description">
-      Another long write‑up.  
-      This layout is built for reading — it won’t fight you or try to look like a tech startup landing page.
-    </div>
-  </div>
+    <!-- NAV -->
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="javascript:goRandom()">RANDOM</a>
+      <a href="https://github.com/gethin101/site/blob/main/index.html" target="_blank">SOURCE</a>
+    </nav>
 
-  <!-- PROJECT 3 -->
-  <div class="project">
-    <div class="project-title">Project Three</div>
-    <img src="images/project3.jpg" alt="Project Three">
-    <div class="description">
-      Add as much text as you want.  
-      This page scrolls cleanly and keeps the focus on your work.
-    </div>
-  </div>
+    <!-- BLUE STRIP -->
+    <div class="nav-underline"></div>
 
-  <!-- PROJECT 4 -->
-  <div class="project">
-    <div class="project-title">Project Four</div>
-    <img src="images/project4.jpg" alt="Project Four">
-    <div class="description">
-      Explain the process, the design, the challenges, the breakthroughs.
+    <!-- INTRO SECTION -->
+    <div class="intro">
+      Welcome to this obscure corner of the internet.  
+      I hope you enjoy your stay — and apologies in advance for any bad language.  
+      This website is designed to be a throwback to better times:  
+      no adverts, no cookies, and no AI-generated content.
     </div>
-  </div>
 
-  <!-- PROJECT 5 -->
-  <div class="project">
-    <div class="project-title">Project Five</div>
-    <img src="images/project5.jpg" alt="Project Five">
-    <div class="description">
-      A clean section for another project.  
-      No clutter, no unnecessary UI.
-    </div>
-  </div>
+    <!-- CONTENT -->
+    <div class="content">
 
-  <!-- PROJECT 6 -->
-  <div class="project">
-    <div class="project-title">Project Six</div>
-    <img src="images/project6.jpg" alt="Project Six">
-    <div class="description">
-      Write freely — this design is meant to disappear behind your words.
-    </div>
-  </div>
+      <p>
+        Welcome to my portfolio. This site is intentionally simple — a clean article-style layout
+        that focuses on the work, not the decoration. Scroll down to explore eight projects with
+        long write-ups, photos, and notes.
+      </p>
 
-  <!-- PROJECT 7 -->
-  <div class="project">
-    <div class="project-title">Project Seven</div>
-    <img src="images/project7.jpg" alt="Project Seven">
-    <div class="description">
-      Another long-form section.  
-      You can write paragraphs, stories, breakdowns — whatever fits the project.
-    </div>
-  </div>
+      <!-- PROJECT 1 -->
+      <div class="project">
+        <div class="project-title">Project One</div>
+        <img src="images/project1.jpg" alt="Project One">
+        <div class="description">
+          Long-form explanation here: what it is, why you made it, how it works,
+          what you learned, and anything else that matters.
+        </div>
+      </div>
 
-  <!-- PROJECT 8 -->
-  <div class="project">
-    <div class="project-title">Project Eight</div>
-    <img src="images/project8.jpg" alt="Project Eight">
-    <div class="description">
-      Your final project.  
-      Add photos, text, notes, anything you want.
+      <!-- PROJECT 2 -->
+      <div class="project">
+        <div class="project-title">Project Two</div>
+        <img src="images/project2.jpg" alt="Project Two">
+        <div class="description">
+          Another project section. This layout is built for reading, not showing off.
+        </div>
+      </div>
+
+      <!-- PROJECT 3 -->
+      <div class="project">
+        <div class="project-title">Project Three</div>
+        <img src="images/project3.jpg" alt="Project Three">
+        <div class="description">
+          Add as much text as you want. The page scrolls cleanly and keeps focus on the work.
+        </div>
+      </div>
+
+      <!-- PROJECT 4 -->
+      <div class="project">
+        <div class="project-title">Project Four</div>
+        <img src="images/project4.jpg" alt="Project Four">
+        <div class="description">
+          Break down the process, decisions, failures, fixes—whatever feels honest.
+        </div>
+      </div>
+
+      <!-- PROJECT 5 -->
+      <div class="project">
+        <div class="project-title">Project Five</div>
+        <img src="images/project5.jpg" alt="Project Five">
+        <div class="description">
+          A clean section for another project. No clutter, no unnecessary UI.
+        </div>
+      </div>
+
+      <!-- PROJECT 6 -->
+      <div class="project">
+        <div class="project-title">Project Six</div>
+        <img src="images/project6.jpg" alt="Project Six">
+        <div class="description">
+          Write freely—this design is meant to disappear behind your words.
+        </div>
+      </div>
+
+      <!-- PROJECT 7 -->
+      <div class="project">
+        <div class="project-title">Project Seven</div>
+        <img src="images/project7.jpg" alt="Project Seven">
+        <div class="description">
+          Another long-form section. Stories, breakdowns, notes—whatever fits the project.
+        </div>
+      </div>
+
+      <!-- PROJECT 8 -->
+      <div class="project">
+        <div class="project-title">Project Eight</div>
+        <img src="images/project8.jpg" alt="Project Eight">
+        <div class="description">
+          Your final project on this page. Photos, text, reflections—fill it out.
+        </div>
+      </div>
+
     </div>
+
   </div>
 
 </body>
