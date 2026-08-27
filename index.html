@@ -109,15 +109,41 @@
       margin-bottom: 10px;
     }
 
+    /* Image sizing: responsive and capped to avoid very tall images */
     .project img {
       width: 100%;
+      max-width: 100%;
+      height: auto;
+      max-height: 420px; /* caps very tall images on desktop */
+      display: block;
       margin: 18px 0;
       border-radius: 4px;
+      object-fit: cover; /* helps when browsers constrain images */
     }
 
     .description {
       font-size: 0.98em;
       margin-top: 8px;
+    }
+
+    /* Responsive tweaks: smaller max-height on narrow screens */
+    @media (max-width: 700px) {
+      .page {
+        margin: 20px auto;
+      }
+      .header {
+        padding: 20px 20px 0 20px;
+      }
+      .intro {
+        padding: 18px 20px 10px 20px;
+      }
+      .content {
+        padding: 20px;
+      }
+      .project img {
+        max-height: 260px; /* less tall on mobile */
+        margin: 14px 0;
+      }
     }
   </style>
 
