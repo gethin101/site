@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About – Gethin</title>
+
+  <!-- Open Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ececec;
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.7;
+      color: #222;
+    }
+
+    .page {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #ffffff;
+      box-shadow: 0 0 25px rgba(0,0,0,0.15);
+    }
+
+    /* Header */
+    .header {
+      padding: 30px 40px 0 40px;
+      text-align: center;
+    }
+
+    .header-title {
+      font-size: 2.6em;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #000;
+    }
+
+    .header-subtitle {
+      font-size: 0.95em;
+      font-weight: 600;
+      color: #0055aa;
+      margin: 4px 0 18px 0;
+      letter-spacing: 0.4px;
+    }
+
+    /* Navigation */
+    nav {
+      background: #000000;
+      display: flex;
+      justify-content: center;
+      gap: 18px; /* closer together */
+      padding: 0; /* remove padding so active tab fills full height */
+      height: 42px; /* fixed height for perfect alignment */
+      align-items: stretch; /* tabs fill full height */
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 0.95em;
+      font-weight: 700;
+      padding: 0 14px; /* horizontal padding only */
+      display: flex;
+      align-items: center; /* vertically center text */
+      height: 100%; /* fill nav bar height */
+    }
+
+    /* ACTIVE PAGE — full-height blue block */
+    nav a.active {
+      background: #002db3; /* same as underline */
+    }
+
+    nav a:hover {
+      background: #333333;
+    }
+
+    /* Blue strip */
+    .nav-underline {
+      width: 100%;
+      height: 10px;
+      background: #002db3;
+    }
+
+    /* Intro text */
+    .intro {
+      padding: 25px 40px 10px 40px;
+      font-size: 0.95em;
+      color: #333;
+    }
+
+    /* About content layout */
+    .about-content {
+      display: flex;
+      gap: 30px;
+      padding: 30px 40px 40px 40px;
+    }
+
+    .about-photo {
+      width: 40%;
+    }
+
+    .about-photo img {
+      width: 100%;
+      border-radius: 4px;
+    }
+
+    .about-text {
+      width: 60%;
+      font-size: 0.98em;
+    }
+
+    .about-text h2 {
+      margin-top: 0;
+      font-size: 1.4em;
+      font-weight: 700;
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+    }
+  </style>
+
+  <script>
+    function goRandom() {
+      const projects = document.querySelectorAll('.project');
+      const random = projects[Math.floor(Math.random() * projects.length)];
+      random.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-title">Gethin</div>
+      <div class="header-subtitle">JACK OF ALL TRADES; MASTER OF NONE.</div>
+    </div>
+
+    <!-- NAV -->
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="about.html" class="active">ABOUT</a>
+      <a href="javascript:goRandom()">RANDOM</a>
+      <a href="https://github.com/gethin101/site/blob/main/index.html" target="_blank">SOURCE</a>
+    </nav>
+
+    <!-- BLUE STRIP -->
+    <div class="nav-underline"></div>
+
+    <!-- INTRO -->
+    <div class="intro">
+      This page gives a bit more detail about who I am, what I do, and why this website exists.
+      Like the rest of the site, it’s intentionally simple — just honest writing and a few photos.
+    </div>
+
+    <!-- ABOUT CONTENT -->
+    <div class="about-content">
+
+      <!-- PHOTO LEFT -->
+      <div class="about-photo">
+        <img src="images/about_photo.jpg" alt="About Photo">
+        <p style="font-size:0.85em; color:#555; margin-top:8px;">
+          2024 — Photograph credit to a very patient friend.
+        </p>
+      </div>
+
+      <!-- TEXT RIGHT -->
+      <div class="about-text">
+        <h2>About Me</h2>
+
+        <p>
+          Hello, I’m Gethin — a person who likes building things, breaking things,
+          fixing things, and learning how they work. I’ve always had a habit of
+          diving into projects head-first, whether they involve electronics,
+          mechanics, software, or something completely random.
+        </p>
+
+        <p>
+          I’m based in the UK, and most of my projects happen in a garage that leaks
+          when it rains. My interests shift with the seasons, but as a rule of thumb:
+          if it has wheels, a motor, or electricity running through it, I’m interested.
+        </p>
+
+        <p>
+          This website started as a place to document my projects — partly so I don’t
+          forget how I built things, and partly because I enjoy sharing the process.
+          It’s also a convenient way to host resources, notes, and experiments online.
+        </p>
+
+        <h2>About This Website</h2>
+
+        <p>
+          The site is intentionally simple. No adverts, no cookies, no AI-generated
+          content — just a clean layout and a collection of things I’ve made or
+          learned. It’s always changing, and sometimes things break, but that’s part
+          of the charm.
+        </p>
+
+        <p>
+          If you find any issues, feel free to reach out. Otherwise, enjoy exploring
+          the projects and the chaos behind them.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
