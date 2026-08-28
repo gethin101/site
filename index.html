@@ -215,7 +215,17 @@
         <div class="project-title">Terminator Eye System</div>
         <img src="assets/images/project1.jpeg" alt="Terminator Eye System" class="project-image w50">
         <div class="description">
-          This build started as a test of real-time computer vision on low-power hardware and quickly evolved into a full tracking prototype. I designed the mounting system, tuned the camera pipeline for low latency, and experimented with overlay graphics inspired by sci-fi targeting UIs. Most of the challenge was balancing frame rate, detection reliability, and battery life while keeping the whole unit compact enough to wear and demo.
+          This was a Terminator eye system I designed and built for a client. It is built around a raspberry pi pico and is designed to recreate the iconic fade-in, blink and fade-out effect of the real terminator from the movies. My system uses two 3mm red LEDs driven through PWM to create smooth brightness transitions, timed blinks and a clean power-down sequence.
+
+I sourced the parts online, soldered all the connections and programmed the firmware in MicroPython. The code runs the entire animation sequence once powered, which includes a gradual fade-on, multiple blinks, brief blackouts and finally a realistic "damaged" power-down once the SPST power switch is flicked.
+
+To manage power in the system, a 1N4148 diode feeds 6V from an AA Battery pack into the pico's VSYS while blocking reverse current. A 0.5F 5.5V supercapacitor keeps the pico alive for a short amount of time after the switch is toggled off. This allows the microcontroller the run the full fade-out animation instead of just suddenly losing power and fully cutting out.
+
+A 100kΩ pull-down resistor ensures the pico constantly monitors the rocker switch signal from GP16 so the power-down sequence can be ran instantly after the switch is flicked. All wiring was soldered with either classic jumper wires or 22AWG silicone-insulated cable so that the components could be moved around freely even after being soldered.
+
+After the first 45 seconds of animation, if the power-switch is still activated, the code loops back to straight after the fade-on so the terminator appears to stay alive infinitely until power-down. 
+ 
+
         </div>
       </div>
 
