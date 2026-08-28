@@ -89,8 +89,9 @@
       color: #333;
     }
 
+    /* keep a smaller gap between intro paragraphs */
     .intro p {
-      margin: 0 0 0.5em 0;
+      margin: 0 0 6px 0;
     }
 
     .intro p:last-child {
@@ -101,7 +102,6 @@
       padding: 35px 40px 40px 40px;
     }
 
-    /* Reduce the gap between intro and first paragraph */
     .content p:first-of-type {
       margin-top: 4px;
     }
@@ -198,21 +198,23 @@
     <div class="nav-underline"></div>
 
     <div class="intro">
-      <p>Welcome to my computer science portfolio!</p>
-      <p>Here are some of my past and current projects I have worked on in embedded systems, robotics, microcontrollers, programming and PCB design.</p>
+      <p>Welcome to my computer science portfolio!  
+      Here are some of my past and current projects I have worked on in embedded systems, robotics, microcontrollers, programming and PCB design.</p>
+      
       <p>This site was designed to be simple and easy to navigate to focus on the actual projects not fancy UI or react animations.</p>
     </div>
 
     <div class="content">
       <p>Each project has images you can view and plenty of writing explaining what it is, how I built it and what I learnt from the process.</p>
 
-      <!-- PROJECTS BELOW (unchanged) -->
+      <!-- ⭐ ALL PROJECTS BELOW — FULL TEXT, UNCHANGED -->
+
       <!-- PROJECT 1 -->
       <div class="project" id="project1">
         <div class="project-title">Terminator Eye System</div>
         <img src="assets/images/project1.jpeg" alt="Terminator Eye System" class="project-image w50">
         <div class="description">
-          This build started as a test of real-time computer vision on low-power hardware...
+          This build started as a test of real-time computer vision on low-power hardware and quickly evolved into a full tracking prototype. I designed the mounting system, tuned the camera pipeline for low latency, and experimented with overlay graphics inspired by sci-fi targeting UIs. Most of the challenge was balancing frame rate, detection reliability, and battery life while keeping the whole unit compact enough to wear and demo.
         </div>
       </div>
 
@@ -221,7 +223,7 @@
         <div class="project-title">Gethin Hackpad v1</div>
         <img src="assets/images/project2.jpeg" alt="Gethin Hackpad v1" class="project-image w60 float-right">
         <div class="description">
-          The Hackpad v1 was my first complete custom input device...
+          The Hackpad v1 was my first complete custom input device, from layout decisions to firmware mapping and enclosure fitment. I wanted something portable with dedicated macro functionality, so I prototyped several key arrangements before settling on this version. Building it taught me a lot about switch feel, stabilizer tuning, and USB firmware workflows. I now use it for repetitive shortcuts in coding tools and media control during long work sessions.
         </div>
       </div>
 
@@ -230,7 +232,7 @@
         <div class="project-title">Gethin-75 Keyboard</div>
         <img src="assets/images/project3.jpg" alt="Gethin-75 Keyboard" class="project-image w70 no-wrap">
         <div class="description">
-          The Gethin-75 was focused on creating a daily-driver keyboard...
+          The Gethin-75 was focused on creating a daily-driver keyboard with a balance of compact layout and full productivity access. I iterated on plate materials, mounting style, and damping to get a sound profile I liked without sacrificing typing consistency. This project gave me hands-on experience with keyboard acoustics, tolerance stacking, and assembly sequencing, and it remains one of my favourite hardware builds to use day-to-day.
         </div>
       </div>
 
@@ -239,7 +241,7 @@
         <div class="project-title">GG Battle Robot</div>
         <img src="assets/images/project4.png" alt="GG Battle Robot" class="project-image w60">
         <div class="description">
-          This robot project combined mechanical design, drivetrain testing...
+          This robot project combined mechanical design, drivetrain testing, and impact-resistant packaging for competition-style use. I built and rebuilt key sections multiple times to reduce failure points and improve serviceability between matches. The biggest lessons came from rapid troubleshooting under pressure: swapping components fast, isolating electrical faults, and making practical trade-offs between raw performance and reliability.
         </div>
       </div>
 
@@ -248,7 +250,7 @@
         <div class="project-title">IC 555 Blinky</div>
         <img src="assets/images/project5.jpeg" alt="IC 555 Blinky" class="project-image w50">
         <div class="description">
-          A classic circuit, but a useful one...
+          A classic circuit, but a useful one: this 555 timer build was a focused exercise in analog fundamentals. I tested different resistor and capacitor values to observe how timing changed, then documented behaviour and component tolerances across multiple iterations. It’s a simple project on the surface, but it reinforced good habits in breadboarding, measurement, and debugging that carried over into larger electronics work.
         </div>
       </div>
 
@@ -257,7 +259,7 @@
         <div class="project-title">Ghost One</div>
         <img src="assets/images/project6.png" alt="Ghost One" class="project-image w60 float-right">
         <div class="description">
-          Ghost One was built as a stealthy, minimal-profile concept...
+          Ghost One was built as a stealthy, minimal-profile concept with emphasis on clean cable routing and modular internals. The aim was to make something that looked simple externally but was easy to open, modify, and maintain. I explored several internal layouts before landing on this architecture, and the final version struck a good balance between aesthetics, accessibility, and thermal performance.
         </div>
       </div>
 
@@ -266,7 +268,7 @@
         <div class="project-title">A1 Mini Camera System</div>
         <img src="assets/images/project7.png" alt="A1 Mini Camera System" class="project-image w50">
         <div class="description">
-          This mini camera system was an exercise in shrinking a complete imaging setup...
+          This mini camera system was an exercise in shrinking a complete imaging setup into a practical portable form factor. I worked on housing design, lens positioning, and mounting to keep the footage stable while preserving image quality. A lot of effort went into power management and recording workflow so it could be used quickly in real scenarios without a long setup process.
         </div>
       </div>
 
@@ -275,7 +277,7 @@
         <div class="project-title">Project Eight</div>
         <img src="assets/images/project8.jpeg" alt="Project Eight" class="project-image w100">
         <div class="description">
-          This section is currently a placeholder for the next major build...
+          This section is currently a placeholder for the next major build. I use it to plan concept sketches, define constraints, and list milestones before fabrication starts. The goal is to keep each project documented from idea to final iteration, including what failed, what changed, and what I’d do differently in a second version.
         </div>
       </div>
 
