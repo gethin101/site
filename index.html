@@ -109,15 +109,11 @@
       margin-bottom: 10px;
     }
 
-    /* Image sizing: responsive and capped to avoid very tall images */
+    /* Base image sizing: safe defaults, no global max-height */
     .project img {
       width: 100%;
       max-width: 100%;
       height: auto;
-
-      /* Hard limits so images always look tidy */
-      max-height: 420px;        /* desktop cap */
-      object-fit: cover;        /* clean cropping instead of stretching */
       display: block;
       margin: 18px 0;
       border-radius: 4px;
@@ -128,7 +124,7 @@
       margin-top: 8px;
     }
 
-    /* Responsive tweaks: smaller max-height on narrow screens */
+    /* Responsive tweaks */
     @media (max-width: 700px) {
       .page {
         margin: 20px auto;
@@ -143,7 +139,6 @@
         padding: 20px;
       }
       .project img {
-        max-height: 260px;      /* mobile cap */
         margin: 14px 0;
       }
     }
@@ -200,7 +195,8 @@
       <!-- PROJECT 1 -->
       <div class="project" id="project1">
         <div class="project-title">Terminator Eye System</div>
-        <img src="assets/images/project1.jpeg" alt="Terminator Eye System">
+        <img src="assets/images/project1.jpeg" alt="Terminator Eye System"
+             style="max-height: 420px;">
         <div class="description">
           Write your long-form explanation here. Talk about the process, the design, the challenges,
           the breakthroughs, and anything else that matters.
@@ -210,7 +206,8 @@
       <!-- PROJECT 2 -->
       <div class="project" id="project2">
         <div class="project-title">Gethin Hackpad v1</div>
-        <img src="assets/images/project2.jpeg" alt="Gethin Hackpad v1">
+        <img src="assets/images/project2.jpeg" alt="Gethin Hackpad v1"
+             style="max-height: 380px;">
         <div class="description">
           Another project section. Add as much text as you want — the strip layout keeps everything
           neat and readable.
@@ -220,7 +217,8 @@
       <!-- PROJECT 3 -->
       <div class="project" id="project3">
         <div class="project-title">Gethin-75 Keyboard</div>
-        <img src="assets/images/project3.jpg" alt="Gethin-75 Keyboard">
+        <img src="assets/images/project3.jpg" alt="Gethin-75 Keyboard"
+             style="max-height: 360px;">
         <div class="description">
           Add as much text as you want. This page scrolls cleanly and keeps the focus on your work.
         </div>
@@ -229,7 +227,8 @@
       <!-- PROJECT 4 -->
       <div class="project" id="project4">
         <div class="project-title">GG Battle Robot</div>
-        <img src="assets/images/project4.png" alt="GG Battle Robot">
+        <img src="assets/images/project4.png" alt="GG Battle Robot"
+             style="max-height: 420px;">
         <div class="description">
           Explain the process, the design, the challenges, the breakthroughs.
         </div>
@@ -238,7 +237,8 @@
       <!-- PROJECT 5 -->
       <div class="project" id="project5">
         <div class="project-title">IC 555 Blinky</div>
-        <img src="assets/images/project5.jpeg" alt="IC 555 Blinky">
+        <img src="assets/images/project5.jpeg" alt="IC 555 Blinky"
+             style="max-height: 360px;">
         <div class="description">
           A clean section for another project. No clutter, no unnecessary UI.
         </div>
@@ -247,7 +247,8 @@
       <!-- PROJECT 6 -->
       <div class="project" id="project6">
         <div class="project-title">Ghost One</div>
-        <img src="assets/images/project6.png" alt="Ghost One">
+        <img src="assets/images/project6.png" alt="Ghost One"
+             style="max-height: 400px;">
         <div class="description">
           Write freely — this design is meant to disappear behind your words.
         </div>
@@ -256,7 +257,8 @@
       <!-- PROJECT 7 -->
       <div class="project" id="project7">
         <div class="project-title">A1 Mini Camera System</div>
-        <img src="assets/images/project7.png" alt="A1 Mini Camera System">
+        <img src="assets/images/project7.png" alt="A1 Mini Camera System"
+             style="max-height: 380px;">
         <div class="description">
           Another long-form section. You can write paragraphs, stories, breakdowns — whatever fits.
         </div>
@@ -265,7 +267,8 @@
       <!-- PROJECT 8 -->
       <div class="project" id="project8">
         <div class="project-title">Project Eight</div>
-        <img src="assets/images/project8.jpeg" alt="Project Eight">
+        <img src="assets/images/project8.jpeg" alt="Project Eight"
+             style="max-height: 360px;">
         <div class="description">
           Your final project. Add photos, text, notes, anything you want.
         </div>
