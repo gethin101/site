@@ -69,7 +69,6 @@
       height: 100%;
     }
 
-    /* ACTIVE PAGE — full-height blue block */
     nav a.active {
       background: #002db3;
     }
@@ -78,21 +77,18 @@
       background: #333333;
     }
 
-    /* Blue strip */
     .nav-underline {
       width: 100%;
       height: 10px;
       background: #002db3;
     }
 
-    /* Intro text */
     .intro {
       padding: 25px 40px 10px 40px;
       font-size: 0.95em;
       color: #333;
     }
 
-    /* Content */
     .content {
       padding: 35px 40px 40px 40px;
     }
@@ -109,42 +105,19 @@
       margin-bottom: 10px;
     }
 
-    /* Base image sizing: safe defaults, no global max-height */
-    .project img {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 18px 0;
-      border-radius: 4px;
-    }
-
     .description {
       font-size: 0.98em;
       margin-top: 8px;
     }
 
-    /* Responsive tweaks */
     @media (max-width: 700px) {
-      .page {
-        margin: 20px auto;
-      }
-      .header {
-        padding: 20px 20px 0 20px;
-      }
-      .intro {
-        padding: 18px 20px 10px 20px;
-      }
-      .content {
-        padding: 20px;
-      }
-      .project img {
-        margin: 14px 0;
-      }
+      .page { margin: 20px auto; }
+      .header { padding: 20px 20px 0 20px; }
+      .intro { padding: 18px 20px 10px 20px; }
+      .content { padding: 20px; }
     }
   </style>
 
-  <!-- RANDOM PROJECT: scroll on index.html -->
   <script>
     function goRandom() {
       const projects = document.querySelectorAll('.project');
@@ -159,13 +132,11 @@
 
   <div class="page">
 
-    <!-- HEADER -->
     <div class="header">
       <div class="header-title">Gethin</div>
       <div class="header-subtitle">COMPUTER SCIENCE PORTFOLIO SITE</div>
     </div>
 
-    <!-- NAV -->
     <nav>
       <a href="index.html" class="active">HOME</a>
       <a href="about.html">ABOUT</a>
@@ -173,10 +144,8 @@
       <a href="https://github.com/gethin101/site/blob/main/index.html" target="_blank">SOURCE</a>
     </nav>
 
-    <!-- BLUE STRIP -->
     <div class="nav-underline"></div>
 
-    <!-- INTRO -->
     <div class="intro">
       Welcome to this obscure corner of the internet.  
       I hope you enjoy your stay — and apologies in advance for any bad language.  
@@ -184,94 +153,72 @@
       no adverts, no cookies, and no AI-generated content.
     </div>
 
-    <!-- CONTENT -->
     <div class="content">
 
-      <p>
-        Below are some of my projects — experiments, builds, breakdowns, and anything else I’ve
-        found interesting enough to document.
-      </p>
+      <p>Below are some of my projects — experiments, builds, breakdowns, and anything else I’ve found interesting enough to document.</p>
 
       <!-- PROJECT 1 -->
       <div class="project" id="project1">
         <div class="project-title">Terminator Eye System</div>
         <img src="assets/images/project1.jpeg" alt="Terminator Eye System"
-             style="max-height: 420px;">
-        <div class="description">
-          Write your long-form explanation here. Talk about the process, the design, the challenges,
-          the breakthroughs, and anything else that matters.
-        </div>
+             style="width:100%; max-height:420px; object-fit:cover;">
+        <div class="description">Write your long-form explanation here.</div>
       </div>
 
       <!-- PROJECT 2 -->
       <div class="project" id="project2">
         <div class="project-title">Gethin Hackpad v1</div>
         <img src="assets/images/project2.jpeg" alt="Gethin Hackpad v1"
-             style="max-height: 380px;">
-        <div class="description">
-          Another project section. Add as much text as you want — the strip layout keeps everything
-          neat and readable.
-        </div>
+             style="width:100%; max-height:380px; object-fit:cover;">
+        <div class="description">Another project section.</div>
       </div>
 
       <!-- PROJECT 3 -->
       <div class="project" id="project3">
         <div class="project-title">Gethin-75 Keyboard</div>
         <img src="assets/images/project3.jpg" alt="Gethin-75 Keyboard"
-             style="max-height: 360px;">
-        <div class="description">
-          Add as much text as you want. This page scrolls cleanly and keeps the focus on your work.
-        </div>
+             style="width:100%; max-height:360px; object-fit:cover;">
+        <div class="description">Add as much text as you want.</div>
       </div>
 
       <!-- PROJECT 4 -->
       <div class="project" id="project4">
         <div class="project-title">GG Battle Robot</div>
         <img src="assets/images/project4.png" alt="GG Battle Robot"
-             style="max-height: 420px;">
-        <div class="description">
-          Explain the process, the design, the challenges, the breakthroughs.
-        </div>
+             style="width:100%; max-height:420px; object-fit:cover;">
+        <div class="description">Explain the process.</div>
       </div>
 
       <!-- PROJECT 5 -->
       <div class="project" id="project5">
         <div class="project-title">IC 555 Blinky</div>
         <img src="assets/images/project5.jpeg" alt="IC 555 Blinky"
-             style="max-height: 360px;">
-        <div class="description">
-          A clean section for another project. No clutter, no unnecessary UI.
-        </div>
+             style="width:100%; max-height:360px; object-fit:cover;">
+        <div class="description">A clean section for another project.</div>
       </div>
 
       <!-- PROJECT 6 -->
       <div class="project" id="project6">
         <div class="project-title">Ghost One</div>
         <img src="assets/images/project6.png" alt="Ghost One"
-             style="max-height: 400px;">
-        <div class="description">
-          Write freely — this design is meant to disappear behind your words.
-        </div>
+             style="width:100%; max-height:400px; object-fit:cover;">
+        <div class="description">Write freely.</div>
       </div>
 
       <!-- PROJECT 7 -->
       <div class="project" id="project7">
         <div class="project-title">A1 Mini Camera System</div>
         <img src="assets/images/project7.png" alt="A1 Mini Camera System"
-             style="max-height: 380px;">
-        <div class="description">
-          Another long-form section. You can write paragraphs, stories, breakdowns — whatever fits.
-        </div>
+             style="width:100%; max-height:380px; object-fit:cover;">
+        <div class="description">Another long-form section.</div>
       </div>
 
       <!-- PROJECT 8 -->
       <div class="project" id="project8">
         <div class="project-title">Project Eight</div>
         <img src="assets/images/project8.jpeg" alt="Project Eight"
-             style="max-height: 360px;">
-        <div class="description">
-          Your final project. Add photos, text, notes, anything you want.
-        </div>
+             style="width:100%; max-height:360px; object-fit:cover;">
+        <div class="description">Your final project.</div>
       </div>
 
     </div>
