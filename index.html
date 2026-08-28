@@ -105,9 +105,42 @@
       margin-bottom: 10px;
     }
 
+    /* Reusable image styles */
+    .project-image {
+      float: left;
+      max-width: 100%;
+      height: auto;
+      margin: 0 20px 12px 0;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-image.float-right {
+      float: right;
+      margin: 0 0 12px 20px;
+    }
+
+    .project-image.no-wrap {
+      float: none;
+      display: block;
+      margin: 0 0 12px 0;
+    }
+
+    /* Width + height helpers */
+    .w50 { width: 50%; max-height: 500px; }
+    .w60 { width: 60%; max-height: 500px; }
+    .w70 { width: 70%; max-height: 360px; }
+    .w100 { width: 100%; max-height: 360px; }
+
     .description {
       font-size: 0.98em;
       margin-top: 8px;
+    }
+
+    .project::after {
+      content: "";
+      display: table;
+      clear: both;
     }
 
     @media (max-width: 700px) {
@@ -115,6 +148,14 @@
       .header { padding: 20px 20px 0 20px; }
       .intro { padding: 18px 20px 10px 20px; }
       .content { padding: 20px; }
+
+      .project-image,
+      .project-image.float-right,
+      .project-image.no-wrap {
+        float: none;
+        width: 100% !important;
+        margin: 0 0 12px 0;
+      }
     }
   </style>
 
@@ -125,13 +166,10 @@
       random.scrollIntoView({ behavior: 'smooth' });
     }
   </script>
-
 </head>
 
 <body>
-
   <div class="page">
-
     <div class="header">
       <div class="header-title">Gethin</div>
       <div class="header-subtitle">COMPUTER SCIENCE PORTFOLIO SITE</div>
@@ -147,83 +185,87 @@
     <div class="nav-underline"></div>
 
     <div class="intro">
-      Welcome to this obscure corner of the internet.  
-      I hope you enjoy your stay — and apologies in advance for any bad language.  
-      This website is designed to be a throwback to better times:  
+      Welcome to this obscure corner of the internet.
+      I hope you enjoy your stay — and apologies in advance for any bad language.
+      This website is designed to be a throwback to better times:
       no adverts, no cookies, and no AI-generated content.
     </div>
 
     <div class="content">
-
       <p>Below are some of my projects — experiments, builds, breakdowns, and anything else I’ve found interesting enough to document.</p>
 
       <!-- PROJECT 1 -->
       <div class="project" id="project1">
         <div class="project-title">Terminator Eye System</div>
-        <img src="assets/images/project1.jpeg" alt="Terminator Eye System"
-             style="width:50%; max-height:500px; object-fit:cover;">
-        <div class="description">Write your long-form explanation here.</div>
+        <img src="assets/images/project1.jpeg" alt="Terminator Eye System" class="project-image w50">
+        <div class="description">
+          This build started as a test of real-time computer vision on low-power hardware and quickly evolved into a full tracking prototype. I designed the mounting system, tuned the camera pipeline for low latency, and experimented with overlay graphics inspired by sci-fi targeting UIs. Most of the challenge was balancing frame rate, detection reliability, and battery life while keeping the whole unit compact enough to wear and demo.
+        </div>
       </div>
 
       <!-- PROJECT 2 -->
       <div class="project" id="project2">
         <div class="project-title">Gethin Hackpad v1</div>
-        <img src="assets/images/project2.jpeg" alt="Gethin Hackpad v1"
-             style="width:60%; max-height:500px; object-fit:cover;">
-        <div class="description">Another project section.</div>
+        <img src="assets/images/project2.jpeg" alt="Gethin Hackpad v1" class="project-image w60 float-right">
+        <div class="description">
+          The Hackpad v1 was my first complete custom input device, from layout decisions to firmware mapping and enclosure fitment. I wanted something portable with dedicated macro functionality, so I prototyped several key arrangements before settling on this version. Building it taught me a lot about switch feel, stabilizer tuning, and USB firmware workflows. I now use it for repetitive shortcuts in coding tools and media control during long work sessions.
+        </div>
       </div>
 
       <!-- PROJECT 3 -->
       <div class="project" id="project3">
         <div class="project-title">Gethin-75 Keyboard</div>
-        <img src="assets/images/project3.jpg" alt="Gethin-75 Keyboard"
-             style="width:70%; max-height:360px; object-fit:cover;">
-        <div class="description">Add as much text as you want.</div>
+        <img src="assets/images/project3.jpg" alt="Gethin-75 Keyboard" class="project-image w70 no-wrap">
+        <div class="description">
+          The Gethin-75 was focused on creating a daily-driver keyboard with a balance of compact layout and full productivity access. I iterated on plate materials, mounting style, and damping to get a sound profile I liked without sacrificing typing consistency. This project gave me hands-on experience with keyboard acoustics, tolerance stacking, and assembly sequencing, and it remains one of my favourite hardware builds to use day-to-day.
+        </div>
       </div>
 
       <!-- PROJECT 4 -->
       <div class="project" id="project4">
         <div class="project-title">GG Battle Robot</div>
-        <img src="assets/images/project4.png" alt="GG Battle Robot"
-             style="width:60%; max-height:420px; object-fit:cover;">
-        <div class="description">Explain the process.</div>
+        <img src="assets/images/project4.png" alt="GG Battle Robot" class="project-image w60">
+        <div class="description">
+          This robot project combined mechanical design, drivetrain testing, and impact-resistant packaging for competition-style use. I built and rebuilt key sections multiple times to reduce failure points and improve serviceability between matches. The biggest lessons came from rapid troubleshooting under pressure: swapping components fast, isolating electrical faults, and making practical trade-offs between raw performance and reliability.
+        </div>
       </div>
 
       <!-- PROJECT 5 -->
       <div class="project" id="project5">
         <div class="project-title">IC 555 Blinky</div>
-        <img src="assets/images/project5.jpeg" alt="IC 555 Blinky"
-             style="width:50%; max-height:360px; object-fit:cover;">
-        <div class="description">A clean section for another project.</div>
+        <img src="assets/images/project5.jpeg" alt="IC 555 Blinky" class="project-image w50">
+        <div class="description">
+          A classic circuit, but a useful one: this 555 timer build was a focused exercise in analog fundamentals. I tested different resistor and capacitor values to observe how timing changed, then documented behaviour and component tolerances across multiple iterations. It’s a simple project on the surface, but it reinforced good habits in breadboarding, measurement, and debugging that carried over into larger electronics work.
+        </div>
       </div>
 
       <!-- PROJECT 6 -->
       <div class="project" id="project6">
         <div class="project-title">Ghost One</div>
-        <img src="assets/images/project6.png" alt="Ghost One"
-             style="width:60%; max-height:500px; object-fit:cover;">
-        <div class="description">Write freely.</div>
+        <img src="assets/images/project6.png" alt="Ghost One" class="project-image w60 float-right">
+        <div class="description">
+          Ghost One was built as a stealthy, minimal-profile concept with emphasis on clean cable routing and modular internals. The aim was to make something that looked simple externally but was easy to open, modify, and maintain. I explored several internal layouts before landing on this architecture, and the final version struck a good balance between aesthetics, accessibility, and thermal performance.
+        </div>
       </div>
 
       <!-- PROJECT 7 -->
       <div class="project" id="project7">
         <div class="project-title">A1 Mini Camera System</div>
-        <img src="assets/images/project7.png" alt="A1 Mini Camera System"
-             style="width:50%; max-height:500px; object-fit:cover;">
-        <div class="description">Another long-form section.</div>
+        <img src="assets/images/project7.png" alt="A1 Mini Camera System" class="project-image w50">
+        <div class="description">
+          This mini camera system was an exercise in shrinking a complete imaging setup into a practical portable form factor. I worked on housing design, lens positioning, and mounting to keep the footage stable while preserving image quality. A lot of effort went into power management and recording workflow so it could be used quickly in real scenarios without a long setup process.
+        </div>
       </div>
 
       <!-- PROJECT 8 -->
       <div class="project" id="project8">
         <div class="project-title">Project Eight</div>
-        <img src="assets/images/project8.jpeg" alt="Project Eight"
-             style="width:100%; max-height:360px; object-fit:cover;">
-        <div class="description">Your final project.</div>
+        <img src="assets/images/project8.jpeg" alt="Project Eight" class="project-image w100">
+        <div class="description">
+          This section is currently a placeholder for the next major build. I use it to plan concept sketches, define constraints, and list milestones before fabrication starts. The goal is to keep each project documented from idea to final iteration, including what failed, what changed, and what I’d do differently in a second version.
+        </div>
       </div>
-
     </div>
-
   </div>
-
 </body>
 </html>
