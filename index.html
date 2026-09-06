@@ -283,7 +283,17 @@ Overall, despite the final result not being perfectly as I originally imagined, 
         <div class="project-title">IC 555 Blinky</div>
         <img src="assets/images/project5.gif" alt="IC 555 Blinky" class="project-image w50">
         <div class="description">
-          A classic circuit, but a useful one: this 555 timer build was a focused exercise in analog fundamentals. I tested different resistor and capacitor values to observe how timing changed, then documented behaviour and component tolerances across multiple iterations. It’s a simple project on the surface, but it reinforced good habits in breadboarding, measurement, and debugging that carried over into larger electronics work.
+This LED blinker was my first analog project that didn't use any code and worked purely on a 555 timer IC, resistors and 2 capacitors. The circuit runs the 555 in astable mode, which means it continuously fluctuates between high and low states, making the LEDs blink.
+The individual LEDs are all wired consecutively on the PCB which makes them blink and flash one after another in a continous loop. 
+The first capacitor charges through the resistors and once it reaches 2/3 of the supply voltage, it flips the 555's output to LOW. The capacitor then discharges through the second resistor, and when it drops to 1/3 of the supply voltage, the output flips to HIGH. 
+The 555 timer is an integrated circuit (IC) which means it is a tiny chip which contains multiple electronic components. These parts work together to create the timing that controls the LED blinking. This meant that instead of wiring all of the tiny components individually, I could solder the single 8-pin chip straight onto the circuit board.
+
+I also incorporated a variable resistor potentiometer into my design which meant that by twisting the screw, I could change the resistance value which directly changes the blink rate/tempo of the LEDs. Increasing the resistance slows the charging time which makes the LEDs blink slower, and decreasing it speeds the blinking up.
+
+ I designed the PCB schematic in KiCad and got it manufactured by JLCPCB, before I then soldered the components on by hand, connected the 9V battery via 2 header pins and eventually got it working as expecting. I decided to go for blue and red LEDs to mimic a police siren and I really like how it turned out. 
+        
+
+
         </div>
       </div>
 
@@ -292,7 +302,11 @@ Overall, despite the final result not being perfectly as I originally imagined, 
         <div class="project-title">Ghost One</div>
         <img src="assets/images/project6.png" alt="Ghost One" class="project-image w60 float-right">
         <div class="description">
-          Ghost One was built as a stealthy, minimal-profile concept with emphasis on clean cable routing and modular internals. The aim was to make something that looked simple externally but was easy to open, modify, and maintain. I explored several internal layouts before landing on this architecture, and the final version struck a good balance between aesthetics, accessibility, and thermal performance.
+         
+The Ghost One project was one I designed with a mate but never actually ended up building. It was a custom flipper-inspired multi-tool device that we designed during HackClub's Forge program to learn more about embedded electronics, radio and infrared communication and WiFi and bluetooth connections. It's powered by an ESP32-S3 N16R8 microcontroller which supports WiFi, Bluetooth LE 5.0, ESP-NOW messaging and support for wireless Rubber Ducky payload emulation. The device design included built-in and soldered infrared and sub-GHz modules, a 0.96" OLED display with a simple menu UI, microSD storage for file management and a rechargeable 3.7V LiPo battery power system with onboard charging. We designed a fully custom PCB in KiCad to integrate the IR transceiver, CC1101 radio, microSD reader and 5D navigation switch, optimising the layout to make the device as compact as possible - like the Flipper Zero. The whole system was designed to be multi-layered and housed inside a 3D-printed case. It would have costed around £49 to build - far cheaper than the £154 the Flipper Zero was going for at the time.
+
+
+
         </div>
       </div>
 
@@ -301,18 +315,14 @@ Overall, despite the final result not being perfectly as I originally imagined, 
         <div class="project-title">A1 Mini Camera System</div>
         <img src="assets/images/project7.png" alt="A1 Mini Camera System" class="project-image w50">
         <div class="description">
-          This mini camera system was an exercise in shrinking a complete imaging setup into a practical portable form factor. I worked on housing design, lens positioning, and mounting to keep the footage stable while preserving image quality. A lot of effort went into power management and recording workflow so it could be used quickly in real scenarios without a long setup process.
+
+This is my relatively simple custom camera system designed around my Bambu Lab's A1 Mini 3D printed for HackClub's Rework program. It was made to create smooth timelapses of prints using custom printed G-code, a Raspberry Pi Pico 2H, a Logitech C270 webcam and a KW11-3Z microswitch. The printer moves the nozzle to a precise position on the far left between layers, where it taps into the microswitch. The pico detects this signal and acts as a USB HID device to send keystrokes to my computer, which then captures a photo using the webcam. This will repeat every layer, allowing me to then stitch the images together into a smooth timelapse without seeing the toolhead blurring past - which is the problem with ordinary camera-setup timelapses. I also planned to design custom CAD mounts in Fusion360 for both the switch and the camera for 3D printing to hold them in place throughout the timelapsing process. 
+
+
+
         </div>
       </div>
 
-      <!-- PROJECT 8 -->
-      <div class="project" id="project8">
-        <div class="project-title">Project Eight</div>
-        <img src="assets/images/project8.jpeg" alt="Project Eight" class="project-image w100">
-        <div class="description">
-          This section is currently a placeholder for the next major build. I use it to plan concept sketches, define constraints, and list milestones before fabrication starts. The goal is to keep each project documented from idea to final iteration, including what failed, what changed, and what I’d do differently in a second version.
-        </div>
-      </div>
 
     </div>
   </div>
