@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title4 desc4">
+  <title id="title4">GG Battle Robot Placeholder</title>
+  <desc id="desc4">Placeholder image for an additional GG Battle Robot photo.</desc>
+  <rect width="1200" height="800" fill="#111827"/>
+  <rect x="80" y="80" width="1040" height="640" rx="20" fill="#1f2937" stroke="#f59e0b" stroke-width="8"/>
+  <text x="600" y="380" text-anchor="middle" font-family="Open Sans, Arial, sans-serif" font-size="56" fill="#f9fafb">GG Battle Robot</text>
+  <text x="600" y="455" text-anchor="middle" font-family="Open Sans, Arial, sans-serif" font-size="34" fill="#fcd34d">Placeholder Image 2</text>
+</svg>
