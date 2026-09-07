@@ -108,14 +108,9 @@
 
 
     .project {
-      margin-top: 28px;
-      padding: 20px;
-      border: 1px solid #dddddd;
-      background: #fafafa;
-    }
-
-    .project:nth-of-type(even) {
-      background: #f4f7fb;
+      margin-top: 40px;
+      padding-bottom: 35px;
+      border-bottom: 1px solid #dddddd;
     }
 
     .project-title {
@@ -125,32 +120,31 @@
     }
 
 
-    .project-media {
-      width: 48%;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-
-    .project-media.left {
+    .project-image {
       float: left;
+      max-width: 100%;
+      height: auto;
       margin: 0 20px 12px 0;
+      object-fit: cover;
+      display: block;
     }
 
-    .project-media.right {
+    .project-image.float-right {
       float: right;
       margin: 0 0 12px 20px;
     }
 
-    .project-image {
-      width: 100%;
-      max-width: 100%;
-      max-height: 360px;
-      height: auto;
-      object-fit: cover;
+    .project-image.no-wrap {
+      float: none;
       display: block;
+      margin: 0 0 12px 0;
     }
+
+  
+    .w50 { width: 50%; max-height: 500px; }
+    .w60 { width: 60%; max-height: 500px; }
+    .w70 { width: 70%; max-height: 360px; }
+    .w100 { width: 100%; max-height: 360px; }
 
     .description {
       font-size: 0.98em;
@@ -169,16 +163,12 @@
       .intro { padding: 18px 20px 10px 20px; }
       .content { padding: 20px; }
 
-      .project-media,
-      .project-media.left,
-      .project-media.right {
+      .project-image,
+      .project-image.float-right,
+      .project-image.no-wrap {
         float: none;
         width: 100% !important;
         margin: 0 0 12px 0;
-      }
-
-      .project-image {
-        max-height: 420px;
       }
     }
   </style>
@@ -222,10 +212,7 @@
       <!-- PROJECT 1 -->
       <div class="project" id="project1">
         <div class="project-title">Terminator Eye System</div>
-        <div class="project-media right">
-          <img src="assets/images/project1.jpeg" alt="Terminator Eye System" class="project-image">
-          <img src="assets/images/project1b-placeholder.svg" alt="Terminator Eye System placeholder image" class="project-image">
-        </div>
+        <img src="assets/images/project1.jpeg" alt="Terminator Eye System" class="project-image w50">
         <div class="description">
           This was a Terminator eye system I designed and built for a client. It is built around a raspberry pi pico and is designed to recreate the iconic fade-in, blink and fade-out effect of the real terminator from the movies. My system uses two 3mm red LEDs driven through PWM to create smooth brightness transitions, timed blinks and a clean power-down sequence.
 
@@ -244,10 +231,7 @@ After the first 45 seconds of animation, if the power-switch is still activated,
       <!-- PROJECT 2 -->
       <div class="project" id="project2">
         <div class="project-title">Gethin Hackpad v1</div>
-        <div class="project-media left">
-          <img src="assets/images/project2.jpeg" alt="Gethin Hackpad v1" class="project-image">
-          <img src="assets/images/project2b-placeholder.svg" alt="Gethin Hackpad v1 placeholder image" class="project-image">
-        </div>
+        <img src="assets/images/project2.jpeg" alt="Gethin Hackpad v1" class="project-image w60 float-right">
         <div class="description">
           This was actually my first electronics project than I did with funding from HackClub. I learned about microcontrollers like the XIAO RP2040 which I used for this, as well as how key switches work in terms of wiring and on PCBs. I learned how to use the KiCad software to first import schematics for each component, route copper wiring, assign footprints and finally layout them out on a PCB that I later added silkscreen (printed text) onto. I ran both the ERC & DRC automatic checkers and fixed multiple issues before exporting the gerber files and sending them off to JLCPCB to get them manufactured and shipped to me from China. I designed a case for my Hackpad using the Fusion360 CAD software then got it 3D printed, before learning how to hand solder every electrical connection on the PCB. This project was very fun, I feel I learnt a lot about many different processes and this served as my entrance into the world of electronics and hardware engineering.
         </div>
@@ -256,10 +240,7 @@ After the first 45 seconds of animation, if the power-switch is still activated,
       <!-- PROJECT 3 -->
       <div class="project" id="project3">
         <div class="project-title">Gethin-75 Keyboard</div>
-        <div class="project-media right">
-          <img src="assets/images/project3.jpg" alt="Gethin-75 Keyboard" class="project-image">
-          <img src="assets/images/project3b-placeholder.svg" alt="Gethin-75 Keyboard placeholder image" class="project-image">
-        </div>
+        <img src="assets/images/project3.jpg" alt="Gethin-75 Keyboard" class="project-image w100 no-wrap">
         <div class="description">
           Inspired by many other very cool mechanical keyboards and acting as a step-up from my Hackpad project, I decided to design and build my own custom 75% keyboard. I made this project to build on my understanding of the fundamentals of macro-board fabrication, to improve my PCB design skills by learning many new methods, such as switch matrixes as using KMK firmware, and to become more familiar with modelling parts in CAD for real-use cases such as 3D printing.
 
@@ -277,10 +258,7 @@ Once the PCB and components arrived, I hand-soldered each and every diode, keysw
       <!-- PROJECT 4 -->
       <div class="project" id="project4">
         <div class="project-title">GG Battle Robot</div>
-        <div class="project-media right">
-          <img src="assets/images/project4.png" alt="GG Battle Robot" class="project-image">
-          <img src="assets/images/project4b-placeholder.svg" alt="GG Battle Robot placeholder image" class="project-image">
-        </div>
+        <img src="assets/images/project4.png" alt="GG Battle Robot" class="project-image w50">
         <div class="description">
           
 This project served as more of a design project in which I used it to learn a lot about electronics and how robots and work, and not so much about the end product. This robot design was inspired with inspiration from Thor in Robot Wars with the axe weapon idea and Apollo for the general shape and aesthetics. This robot design uses 4x gear TT motors that are driven by 2 L298N motor drivers, controlled by a raspberry pi pico. The weapon is a 3D printed axe weapon driven by a SG90 servo motor.
@@ -303,10 +281,7 @@ Overall, despite the final result not being perfectly as I originally imagined, 
       <!-- PROJECT 5 -->
       <div class="project" id="project5">
         <div class="project-title">IC 555 Blinky</div>
-        <div class="project-media right">
-          <img src="assets/images/project5.gif" alt="IC 555 Blinky" class="project-image">
-          <img src="assets/images/project5b-placeholder.svg" alt="IC 555 Blinky placeholder image" class="project-image">
-        </div>
+        <img src="assets/images/project5.gif" alt="IC 555 Blinky" class="project-image w50">
         <div class="description">
 This LED blinker was my first analog project that didn't use any code and worked purely on a 555 timer IC, resistors and 2 capacitors. The circuit runs the 555 in astable mode, which means it continuously fluctuates between high and low states, making the LEDs blink.
 The individual LEDs are all wired consecutively on the PCB which makes them blink and flash one after another in a continous loop. 
@@ -325,10 +300,7 @@ I also incorporated a variable resistor potentiometer into my design which meant
       <!-- PROJECT 6 -->
       <div class="project" id="project6">
         <div class="project-title">Ghost One</div>
-        <div class="project-media left">
-          <img src="assets/images/project6.png" alt="Ghost One" class="project-image">
-          <img src="assets/images/project6b-placeholder.svg" alt="Ghost One placeholder image" class="project-image">
-        </div>
+        <img src="assets/images/project6.png" alt="Ghost One" class="project-image w60 float-right">
         <div class="description">
          
 The Ghost One project was one I designed with a mate but never actually ended up building. It was a custom flipper-inspired multi-tool device that we designed during HackClub's Forge program to learn more about embedded electronics, radio and infrared communication and WiFi and bluetooth connections. It's powered by an ESP32-S3 N16R8 microcontroller which supports WiFi, Bluetooth LE 5.0, ESP-NOW messaging and support for wireless Rubber Ducky payload emulation. The device design included built-in and soldered infrared and sub-GHz modules, a 0.96" OLED display with a simple menu UI, microSD storage for file management and a rechargeable 3.7V LiPo battery power system with onboard charging. We designed a fully custom PCB in KiCad to integrate the IR transceiver, CC1101 radio, microSD reader and 5D navigation switch, optimising the layout to make the device as compact as possible - like the Flipper Zero. The whole system was designed to be multi-layered and housed inside a 3D-printed case. It would have costed around £49 to build - far cheaper than the £154 the Flipper Zero was going for at the time.
@@ -341,10 +313,7 @@ The Ghost One project was one I designed with a mate but never actually ended up
       <!-- PROJECT 7 -->
       <div class="project" id="project7">
         <div class="project-title">A1 Mini Camera System</div>
-        <div class="project-media right">
-          <img src="assets/images/project7.png" alt="A1 Mini Camera System" class="project-image">
-          <img src="assets/images/project7b-placeholder.svg" alt="A1 Mini Camera System placeholder image" class="project-image">
-        </div>
+        <img src="assets/images/project7.png" alt="A1 Mini Camera System" class="project-image w50">
         <div class="description">
 
 This is my relatively simple custom camera system designed around my Bambu Lab's A1 Mini 3D printed for HackClub's Rework program. It was made to create smooth timelapses of prints using custom printed G-code, a Raspberry Pi Pico 2H, a Logitech C270 webcam and a KW11-3Z microswitch. The printer moves the nozzle to a precise position on the far left between layers, where it taps into the microswitch. The pico detects this signal and acts as a USB HID device to send keystrokes to my computer, which then captures a photo using the webcam. This will repeat every layer, allowing me to then stitch the images together into a smooth timelapse without seeing the toolhead blurring past - which is the problem with ordinary camera-setup timelapses. I also planned to design custom CAD mounts in Fusion360 for both the switch and the camera for 3D printing to hold them in place throughout the timelapsing process. 
