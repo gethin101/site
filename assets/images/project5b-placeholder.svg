@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title5 desc5">
+  <title id="title5">IC 555 Blinky Placeholder</title>
+  <desc id="desc5">Placeholder image for an additional IC 555 Blinky photo.</desc>
+  <rect width="1200" height="800" fill="#0c4a6e"/>
+  <rect x="80" y="80" width="1040" height="640" rx="20" fill="#082f49" stroke="#f97316" stroke-width="8"/>
+  <text x="600" y="380" text-anchor="middle" font-family="Open Sans, Arial, sans-serif" font-size="56" fill="#f0f9ff">IC 555 Blinky</text>
+  <text x="600" y="455" text-anchor="middle" font-family="Open Sans, Arial, sans-serif" font-size="34" fill="#fdba74">Placeholder Image 2</text>
+</svg>
