@@ -267,7 +267,7 @@ Originally, the robot was controlled through a PCB that incorporated 433 MHz tra
 
 The original design also included a 1.8" SPI LCD screen to display useful data, a set of SK6812 MINI-E RGBs and a 8Ω 2W speaker driven by a PAM8302 amplifier board to play sound effects and/or music.
 
-The original robot power involved a 4V battery pack, a 5V MT3608 boost converter and a 5V DC-DC buck converter but I later simplified this to use just a 6V battery pack for the remote and a replacable 9V alkaline battery for the robot. This meant that the whole power system was simpler and easier to approach as well as more lightweight so the robot could be controleld far easier. The chassis was 3D printed in Matte-PLA and the custom CircuitPython code was flashed onto the robot and remote. 
+The original robot power involved a 4V battery pack, a 5V MT3608 boost converter and a 5V DC-DC buck converter but I later simplified this to use just a 6V battery pack for the remote and a replacable 9V alkaline battery for the robot. This meant that the whole power system was simpler and easier to approach as well as more lightweight so the robot could be controlled far easier. The chassis was 3D printed in Matte-PLA and the custom CircuitPython code was flashed onto the robot and remote. 
 
 I decided to use tank drive with the motors which meant that I could steer the robot by slowing down the 2 motors on the side I want the robot to turn and by speeding up the other 2 motors via commands sent by the remote pico. This also meant that it could spin in place by driving the 2 sets of motors in opposite directions.
 
