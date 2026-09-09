@@ -173,14 +173,7 @@
     }
   </style>
 
-  <script>
-    function goRandom() {
-      const projects = document.querySelectorAll('.project');
-      const random = projects[Math.floor(Math.random() * projects.length)];
-      random.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    
+  <script>  
     let headerClickCount = 0;
     let headerClickTimer = null;
 
@@ -210,9 +203,9 @@
 <body>
   <div class="page">
     <div class="header">
-      <div class="header-title">Gethin</div>
-      <div class="header-subtitle">COMPUTER SCIENCE PORTFOLIO SITE</div>
-    </div>
+  <div class="header-title" onclick="onHeaderTitleClick()">Gethin</div>
+  <div class="header-subtitle">COMPUTER SCIENCE PORTFOLIO SITE</div>
+</div>
 
     <nav>
       <a href="index.html" class="active">HOME</a>
