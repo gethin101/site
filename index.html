@@ -40,6 +40,7 @@
       letter-spacing: 0.5px;
       text-transform: uppercase;
       color: #000;
+      cursor: pointer;
     }
 
     .header-subtitle {
@@ -174,10 +175,27 @@
   </style>
 
   <script>
+    let headerClickCount = 0;
+    let headerClickTimer = null;
+
     function goRandom() {
       const projects = document.querySelectorAll('.project');
       const random = projects[Math.floor(Math.random() * projects.length)];
       random.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function onHeaderTitleClick() {
+      headerClickCount++;
+
+      clearTimeout(headerClickTimer);
+      headerClickTimer = setTimeout(() => {
+        headerClickCount = 0;
+      }, 1500);
+
+      if (headerClickCount >= 5) {
+        headerClickCount = 0;
+        window.location.href = "https://gethingrice.com/nea.html";
+      }
     }
   </script>
 </head>
@@ -185,7 +203,7 @@
 <body>
   <div class="page">
     <div class="header">
-      <div class="header-title">Gethin</div>
+      <div class="header-title" onclick="onHeaderTitleClick()">Gethin</div>
       <div class="header-subtitle">COMPUTER SCIENCE PORTFOLIO SITE</div>
     </div>
 
@@ -206,7 +224,7 @@
     </div>
 
     <div class="content">
-      <p>Each project has images you can view and plenty of writing explaining what it is, how I built it and what I learnt from the process. Feel free to use the random button to view a random project and also view my source code on <a href="https://github.com/gethin101/site" target="_blank">GitHub</a></p>
+      <p>Each project has images you can view and plenty of writing explaining what it is, how I built it and what I learnt from the process. Feel free to use the random button to view a random projec[...]
 
 
       <!-- PROJECT 1 -->
@@ -214,13 +232,13 @@
         <div class="project-title">Terminator Eye System</div>
         <img src="assets/images/project1.jpeg" alt="Terminator Eye System" class="project-image w50">
         <div class="description">
-          This was a Terminator eye system I designed and built for a client. It is built around a raspberry pi pico and is designed to recreate the iconic fade-in, blink and fade-out effect of the real terminator from the movies. My system uses two 3mm red LEDs driven through PWM to create smooth brightness transitions, timed blinks and a clean power-down sequence.
+          This was a Terminator eye system I designed and built for a client. It is built around a raspberry pi pico and is designed to recreate the iconic fade-in, blink and fade-out effect of the re[...]
 
-I sourced the parts online, soldered all the connections and programmed the firmware in MicroPython. The code runs the entire animation sequence once powered, which includes a gradual fade-on, multiple blinks, brief blackouts and finally a realistic "damaged" power-down once the SPST power switch is flicked.
+I sourced the parts online, soldered all the connections and programmed the firmware in MicroPython. The code runs the entire animation sequence once powered, which includes a gradual fade-on, multipl[...]
 
-To manage power in the system, a 1N4148 diode feeds 6V from an AA Battery pack into the pico's VSYS while blocking reverse current. A 0.5F 5.5V supercapacitor keeps the pico alive for a short amount of time after the switch is toggled off. This allows the microcontroller the run the full fade-out animation instead of just suddenly losing power and fully cutting out.
+To manage power in the system, a 1N4148 diode feeds 6V from an AA Battery pack into the pico's VSYS while blocking reverse current. A 0.5F 5.5V supercapacitor keeps the pico alive for a short amount o[...]
 
-A 100kΩ pull-down resistor ensures the pico constantly monitors the rocker switch signal from GP16 so the power-down sequence can be ran instantly after the switch is flicked. All wiring was soldered with either classic jumper wires or 22AWG silicone-insulated cable so that the components could be moved around freely even after being soldered.
+A 100kΩ pull-down resistor ensures the pico constantly monitors the rocker switch signal from GP16 so the power-down sequence can be ran instantly after the switch is flicked. All wiring was soldered[...]
 
 After the first 45 seconds of animation, if the power-switch is still activated, the code loops back to straight after the fade-on so the terminator appears to stay alive infinitely until power-down. 
  
@@ -233,7 +251,7 @@ After the first 45 seconds of animation, if the power-switch is still activated,
         <div class="project-title">Gethin Hackpad v1</div>
         <img src="assets/images/project2.jpeg" alt="Gethin Hackpad v1" class="project-image w60 float-right">
         <div class="description">
-          This was actually my first electronics project than I did with funding from HackClub. I learned about microcontrollers like the XIAO RP2040 which I used for this, as well as how key switches work in terms of wiring and on PCBs. I learned how to use the KiCad software to first import schematics for each component, route copper wiring, assign footprints and finally layout them out on a PCB that I later added silkscreen (printed text) onto. I ran both the ERC & DRC automatic checkers and fixed multiple issues before exporting the gerber files and sending them off to JLCPCB to get them manufactured and shipped to me from China. I designed a case for my Hackpad using the Fusion360 CAD software then got it 3D printed, before learning how to hand solder every electrical connection on the PCB. This project was very fun, I feel I learnt a lot about many different processes and this served as my entrance into the world of electronics and hardware engineering.
+          This was actually my first electronics project than I did with funding from HackClub. I learned about microcontrollers like the XIAO RP2040 which I used for this, as well as how key switches[...]
         </div>
       </div>
 
@@ -242,15 +260,15 @@ After the first 45 seconds of animation, if the power-switch is still activated,
         <div class="project-title">Gethin-75 Keyboard</div>
         <img src="assets/images/project3.jpg" alt="Gethin-75 Keyboard" class="project-image w100 no-wrap">
         <div class="description">
-          Inspired by many other very cool mechanical keyboards and acting as a step-up from my Hackpad project, I decided to design and build my own custom 75% keyboard. I made this project to build on my understanding of the fundamentals of macro-board fabrication, to improve my PCB design skills by learning many new methods, such as switch matrixes as using KMK firmware, and to become more familiar with modelling parts in CAD for real-use cases such as 3D printing.
+          Inspired by many other very cool mechanical keyboards and acting as a step-up from my Hackpad project, I decided to design and build my own custom 75% keyboard. I made this project to build [...]
 
-To design my PCB, I first used an external site (www.keyboard-layout-editor.com) to choose my layout and to export an outline for where the key switches needed to be placed in KiCad. I then imported this .dxf file into the PCB editor where I then placed many schematics for my switches, raspberry pi pico and left gaps for plate-mounted stabilisers.
+To design my PCB, I first used an external site (www.keyboard-layout-editor.com) to choose my layout and to export an outline for where the key switches needed to be placed in KiCad. I then imported t[...]
 
-I then imported the same outline into CAD where I extruded the plate up 5mm and reshaped the outlines slightly to serve as my keyboard plate in which the key switches were pushed in from above, through the PCB then soldered below. I also designed my keyboard case here and 3D printed it - this took many iterations and prototypes before ending up with my finished keyboard. 
+I then imported the same outline into CAD where I extruded the plate up 5mm and reshaped the outlines slightly to serve as my keyboard plate in which the key switches were pushed in from above, throug[...]
 
-I routed the components in KiCad, and also exported a .step file which I imported into Fusion360 to check that it actually fit properly in the keyboard case. I fixed a few wiring issues, ran the built-in ERC & DRC and sent the gerbers off for fabrication.
+I routed the components in KiCad, and also exported a .step file which I imported into Fusion360 to check that it actually fit properly in the keyboard case. I fixed a few wiring issues, ran the built[...]
 
-Once the PCB and components arrived, I hand-soldered each and every diode, keyswitch and the pico onto the PCB and manually tested each key with a test code I made in CircuitPython. After a lot of trial and error, I managed to get every key switch working and flashed the microcontroller with my KMK python firmware and programmed each macro key to do specific functions, such as play/pause, next song, volume up/down and open task manager. I could definitely improve if I was to make another similar project, but overall this project went pretty well.
+Once the PCB and components arrived, I hand-soldered each and every diode, keyswitch and the pico onto the PCB and manually tested each key with a test code I made in CircuitPython. After a lot of tri[...]
 
         </div>
       </div>
@@ -261,19 +279,19 @@ Once the PCB and components arrived, I hand-soldered each and every diode, keysw
         <img src="assets/images/project4.png" alt="GG Battle Robot" class="project-image w50">
         <div class="description">
           
-This project served as more of a design project in which I used it to learn a lot about electronics and how robots and work, and not so much about the end product. This robot design was inspired with inspiration from Thor in Robot Wars with the axe weapon idea and Apollo for the general shape and aesthetics. This robot design uses 4x gear TT motors that are driven by 2 L298N motor drivers, controlled by a raspberry pi pico. The weapon is a 3D printed axe weapon driven by a SG90 servo motor.
+This project served as more of a design project in which I used it to learn a lot about electronics and how robots and work, and not so much about the end product. This robot design was inspired with [...]
 
-Originally, the robot was controlled through a PCB that incorporated 433 MHz transmittion and recieving but after I learnt that it was too noisy and not reliable enough, I switched the design to use upgraded Raspberry Pi Pico 2Ws and wrote code that used their built-in local WiFi access point abilities to designate the robot as a host and allow the remote to automatically connect to the robot and send commands using a joystick module.
+Originally, the robot was controlled through a PCB that incorporated 433 MHz transmittion and recieving but after I learnt that it was too noisy and not reliable enough, I switched the design to use u[...]
 
 The original design also included a 1.8" SPI LCD screen to display useful data, a set of SK6812 MINI-E RGBs and a 8Ω 2W speaker driven by a PAM8302 amplifier board to play sound effects and/or music.
 
-The original robot power involved a 4V battery pack, a 5V MT3608 boost converter and a 5V DC-DC buck converter but I later simplified this to use just a 6V battery pack for the remote and a replacable 9V alkaline battery for the robot. This meant that the whole power system was simpler and easier to approach as well as more lightweight so the robot could be controlled far easier. The chassis was 3D printed in Matte-PLA and the custom CircuitPython code was flashed onto the robot and remote. 
+The original robot power involved a 4V battery pack, a 5V MT3608 boost converter and a 5V DC-DC buck converter but I later simplified this to use just a 6V battery pack for the remote and a replacable[...]
 
-I decided to use tank drive with the motors which meant that I could steer the robot by slowing down the 2 motors on the side I want the robot to turn and by speeding up the other 2 motors via commands sent by the remote pico. This also meant that it could spin in place by driving the 2 sets of motors in opposite directions.
+I decided to use tank drive with the motors which meant that I could steer the robot by slowing down the 2 motors on the side I want the robot to turn and by speeding up the other 2 motors via command[...]
 
-The original PCB remote wasn't actually used in the final design but used replacable female header sockets for the RF transmitter, 5V boost converter and joystick module so they could be easily push-fitted in and replaced if needed. The design used THT soldered pico pads for the MCU, SMD-style surface mount pads for the button switches used for sending custom commands to the robot such as to raise/lower the axe weapon and to change the LEDs and LCD display, and exposed copper pads for the battery+ and battery- connections.
+The original PCB remote wasn't actually used in the final design but used replacable female header sockets for the RF transmitter, 5V boost converter and joystick module so they could be easily push-f[...]
 
-Overall, despite the final result not being perfectly as I originally imagined, I learnt a lot from this project and feel it really benefitted my understanding of electronics and especially how power systems work in the real world.
+Overall, despite the final result not being perfectly as I originally imagined, I learnt a lot from this project and feel it really benefitted my understanding of electronics and especially how power [...]
 
         </div>
       </div>
@@ -283,14 +301,14 @@ Overall, despite the final result not being perfectly as I originally imagined, 
         <div class="project-title">IC 555 Blinky</div>
         <img src="assets/images/project5.gif" alt="IC 555 Blinky" class="project-image w50">
         <div class="description">
-This LED blinker was my first analog project that didn't use any code and worked purely on a 555 timer IC, resistors and 2 capacitors. The circuit runs the 555 in astable mode, which means it continuously fluctuates between high and low states, making the LEDs blink.
+This LED blinker was my first analog project that didn't use any code and worked purely on a 555 timer IC, resistors and 2 capacitors. The circuit runs the 555 in astable mode, which means it continuo[...]
 The individual LEDs are all wired consecutively on the PCB which makes them blink and flash one after another in a continous loop. 
-The first capacitor charges through the resistors and once it reaches 2/3 of the supply voltage, it flips the 555's output to LOW. The capacitor then discharges through the second resistor, and when it drops to 1/3 of the supply voltage, the output flips to HIGH. 
-The 555 timer is an integrated circuit (IC) which means it is a tiny chip which contains multiple electronic components. These parts work together to create the timing that controls the LED blinking. This meant that instead of wiring all of the tiny components individually, I could solder the single 8-pin chip straight onto the circuit board.
+The first capacitor charges through the resistors and once it reaches 2/3 of the supply voltage, it flips the 555's output to LOW. The capacitor then discharges through the second resistor, and when i[...]
+The 555 timer is an integrated circuit (IC) which means it is a tiny chip which contains multiple electronic components. These parts work together to create the timing that controls the LED blinking. [...]
 
-I also incorporated a variable resistor potentiometer into my design which meant that by twisting the screw, I could change the resistance value which directly changes the blink rate/tempo of the LEDs. Increasing the resistance slows the charging time which makes the LEDs blink slower, and decreasing it speeds the blinking up.
+I also incorporated a variable resistor potentiometer into my design which meant that by twisting the screw, I could change the resistance value which directly changes the blink rate/tempo of the LEDs[...]
 
- I designed the PCB schematic in KiCad and got it manufactured by JLCPCB, before I then soldered the components on by hand, connected the 9V battery via 2 header pins and eventually got it working as expecting. I decided to go for blue and red LEDs to mimic a police siren and I really like how it turned out. 
+ I designed the PCB schematic in KiCad and got it manufactured by JLCPCB, before I then soldered the components on by hand, connected the 9V battery via 2 header pins and eventually got it working as [...]
         
 
 
@@ -303,7 +321,7 @@ I also incorporated a variable resistor potentiometer into my design which meant
         <img src="assets/images/project6.png" alt="Ghost One" class="project-image w60 float-right">
         <div class="description">
          
-The Ghost One project was one I designed with a mate but never actually ended up building. It was a custom flipper-inspired multi-tool device that we designed during HackClub's Forge program to learn more about embedded electronics, radio and infrared communication and WiFi and bluetooth connections. It's powered by an ESP32-S3 N16R8 microcontroller which supports WiFi, Bluetooth LE 5.0, ESP-NOW messaging and support for wireless Rubber Ducky payload emulation. The device design included built-in and soldered infrared and sub-GHz modules, a 0.96" OLED display with a simple menu UI, microSD storage for file management and a rechargeable 3.7V LiPo battery power system with onboard charging. We designed a fully custom PCB in KiCad to integrate the IR transceiver, CC1101 radio, microSD reader and 5D navigation switch, optimising the layout to make the device as compact as possible - like the Flipper Zero. The whole system was designed to be multi-layered and housed inside a 3D-printed case. It would have costed around £49 to build - far cheaper than the £154 the Flipper Zero was going for at the time.
+The Ghost One project was one I designed with a mate but never actually ended up building. It was a custom flipper-inspired multi-tool device that we designed during HackClub's Forge program to learn [...]
 
 
 
@@ -316,7 +334,7 @@ The Ghost One project was one I designed with a mate but never actually ended up
         <img src="assets/images/project7.png" alt="A1 Mini Camera System" class="project-image w50">
         <div class="description">
 
-This is my relatively simple custom camera system designed around my Bambu Lab's A1 Mini 3D printed for HackClub's Rework program. It was made to create smooth timelapses of prints using custom printed G-code, a Raspberry Pi Pico 2H, a Logitech C270 webcam and a KW11-3Z microswitch. The printer moves the nozzle to a precise position on the far left between layers, where it taps into the microswitch. The pico detects this signal and acts as a USB HID device to send keystrokes to my computer, which then captures a photo using the webcam. This will repeat every layer, allowing me to then stitch the images together into a smooth timelapse without seeing the toolhead blurring past - which is the problem with ordinary camera-setup timelapses. I also planned to design custom CAD mounts in Fusion360 for both the switch and the camera for 3D printing to hold them in place throughout the timelapsing process. 
+This is my relatively simple custom camera system designed around my Bambu Lab's A1 Mini 3D printed for HackClub's Rework program. It was made to create smooth timelapses of prints using custom printe[...]
 
 
 
