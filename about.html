@@ -69,7 +69,6 @@
       height: 100%;
     }
 
-  
     nav a.active {
       background: #002db3;
     }
@@ -103,9 +102,11 @@
       width: 40%;
     }
 
-    .about-photo img {
+    .about-photo img,
+    .about-photo video {
       width: 100%;
       border-radius: 4px;
+      display: block;
     }
 
     .about-text {
@@ -124,7 +125,6 @@
     }
   </style>
 
- 
   <script>
     function goRandom() {
       const id = Math.floor(Math.random() * 8) + 1;
@@ -138,7 +138,6 @@
 
   <div class="page">
 
-
     <div class="header">
       <div class="header-title">Gethin</div>
       <div class="header-subtitle">COMPUTER SCIENCE PORTFOLIO SITE</div>
@@ -151,62 +150,55 @@
       <a href="https://github.com/gethin101/site" target="_blank">SOURCE</a>
     </nav>
 
-
     <div class="nav-underline"></div>
 
-
     <div class="intro">
-  This page gives a bit more detail about who I am, what I do, and why I made this website.
-
-      
+      This page gives a bit more detail about who I am, what I do, and why I made this website.
       Like the rest of the site, it’s intentionally simple - just normal text and a few photos.
     </div>
 
- 
-<div class="about-photo">
-  <video autoplay loop muted playsinline preload="auto" style="width:100%; border-radius:4px;">
-    <source src="assets/videos/about.mp4" type="video/mp4">
-  </video>
+    <!-- FIXED: restored about-content wrapper -->
+    <div class="about-content">
 
-  <p style="font-size:0.85em; color:#555; margin-top:8px;">
-    Here is a short clip of the fade-on from my Terminator Eyes project I made for a client in 2026.
-  </p>
-</div>
+      <div class="about-photo">
+        <video autoplay loop muted playsinline preload="auto">
+          <source src="assets/videos/about.mp4" type="video/mp4">
+        </video>
 
- 
+        <p style="font-size:0.85em; color:#555; margin-top:8px;">
+          Here is a short clip of the fade-on from my Terminator Eyes project I made for a client in 2026.
+        </p>
+      </div>
+
       <div class="about-text">
         <h2>About Me</h2>
 
         <p>
-      Hi, I'm Gethin - a student and self-taught hardware & software developer with a passion for learning about and building real, functional projects across a variety of fields such as embedded systems, microcontrollers, robotics, PCB design and digital fabrication.
+          Hi, I'm Gethin - a student and self-taught hardware & software developer with a passion for learning about and building real, functional projects across a variety of fields such as embedded systems, microcontrollers, robotics, PCB design and digital fabrication.
         </p>
 
-
-
         <p>
-        Over the past few years, I've worked on a wide range of projects, from custom macro keyboards and battle robots to analog circuits, timelapse automation systems and wireless multi-tool devices.
+          Over the past few years, I've worked on a wide range of projects, from custom macro keyboards and battle robots to analog circuits, timelapse automation systems and wireless multi-tool devices.
         </p>
 
-<p>
-I'm aiming for a career in computer science and I use each project as a way to build the skills and knowledge I'll need in the industry.
-
-</p>
+        <p>
+          I'm aiming for a career in computer science and I use each project as a way to build the skills and knowledge I'll need in the industry.
+        </p>
 
         <p>
-        I also often use my projects as a way to learn something new - whether it be designing a switch matrix for a macropad, writing custom G-code for my 3D printer, experimenting with RF and infrared communication, or building timing circuits with analog components.
+          I also often use my projects as a way to learn something new - whether it be designing a switch matrix for a macropad, writing custom G-code for my 3D printer, experimenting with RF and infrared communication, or building timing circuits with analog components.
         </p>
 
         <h2>About This Website</h2>
 
         <p>
-      I built this portfolio website to bring all my projects together in one place, to show how my skills have progressed over time and to allow me to look back and see what I have managed to accomplish.
+          I built this portfolio website to bring all my projects together in one place, to show how my skills have progressed over time and to allow me to look back and see what I have managed to accomplish.
         </p>
 
- <p>
-  It also lets me present my projects clearly and neatly, without the clutter of different GitHub repos and random folders.
-  Feel free to scroll around and view the source code on <a href="https://github.com/gethin101/site" target="_blank">GitHub</a>
-</p>
-
+        <p>
+          It also lets me present my projects clearly and neatly, without the clutter of different GitHub repos and random folders.
+          Feel free to scroll around and view the source code on <a href="https://github.com/gethin101/site" target="_blank">GitHub</a>.
+        </p>
 
       </div>
 
