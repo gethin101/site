@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="preload" href="assets/images/project1.jpeg" as="image">
-  <link rel="preload" href="assets/images/project2.jpeg" as="image">
-  <link rel="preload" href="assets/images/project3.jpg" as="image">
-
   <meta charset="UTF-8">
   <title>Gethin Portfolio</title>
 
@@ -243,6 +239,35 @@
   </style>
 
   <script>  
+    // Performance toggles (safe to revert): switch these booleans before deploy.
+    const USE_OPTIMIZED_IMAGES = false;
+    const USE_SAFE_LAZY_LOADING_ONLY = false;
+    const PRELOAD_CANDIDATES = [
+      'assets/images/project1.jpeg',
+      'assets/images/project2.jpeg',
+      'assets/images/project3.jpg'
+    ];
+
+    function getOptimizedSrc(originalSrc) {
+      if (!/^assets\//.test(originalSrc) || !/\.(jpe?g|png|gif)$/i.test(originalSrc)) return null;
+      return originalSrc
+        .replace(/^assets\//, 'assets/optimized/')
+        .replace(/\.(jpe?g|png|gif)$/i, '.webp');
+    }
+
+    function configurePreloads() {
+      const preloadSources = USE_OPTIMIZED_IMAGES ? PRELOAD_CANDIDATES.slice(0, 1) : PRELOAD_CANDIDATES;
+      preloadSources.forEach((source) => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = USE_OPTIMIZED_IMAGES ? (getOptimizedSrc(source) || source) : source;
+        document.head.appendChild(link);
+      });
+    }
+
+    configurePreloads();
+
     let headerClickCount = 0;
     let headerClickTimer = null;
 
@@ -300,7 +325,39 @@
       });
     }
 
+    function applyPerformanceMode() {
+      const allImages = Array.from(document.querySelectorAll('.content img'));
+      const useLazyLoading = USE_OPTIMIZED_IMAGES || USE_SAFE_LAZY_LOADING_ONLY;
+
+      allImages.forEach((img, index) => {
+        const originalSrc = img.dataset.originalSrc || img.getAttribute('src');
+        img.dataset.originalSrc = originalSrc;
+
+        if (USE_OPTIMIZED_IMAGES) {
+          const optimizedSrc = getOptimizedSrc(originalSrc);
+          if (optimizedSrc) {
+            img.addEventListener('error', () => {
+              img.src = originalSrc;
+            }, { once: true });
+            img.src = optimizedSrc;
+          }
+        } else if (img.getAttribute('src') !== originalSrc) {
+          img.src = originalSrc;
+        }
+
+        img.decoding = 'async';
+        if (useLazyLoading && index > 0) {
+          img.loading = 'lazy';
+          img.fetchPriority = 'auto';
+        } else {
+          img.loading = 'eager';
+          img.fetchPriority = index === 0 ? 'high' : 'auto';
+        }
+      });
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
+      applyPerformanceMode();
       document.querySelectorAll('[data-gallery]').forEach(initGallery);
     });
 
