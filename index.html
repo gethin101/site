@@ -184,7 +184,7 @@
 
     .gallery-track {
       display: flex;
-      transition: transform 0.45s ease;
+      transition: transform 0.8s ease;
       will-change: transform;
     }
 
@@ -288,13 +288,13 @@
 
       let autoSlide = setInterval(() => {
         updateGallery(gallery, Number(gallery.dataset.index) + 1);
-      }, 3500);
+      }, 5000);
 
       gallery.addEventListener('mouseenter', () => clearInterval(autoSlide));
       gallery.addEventListener('mouseleave', () => {
         autoSlide = setInterval(() => {
           updateGallery(gallery, Number(gallery.dataset.index) + 1);
-        }, 3500);
+        }, 5000);
       });
     }
 
@@ -350,7 +350,6 @@ After the first 45 seconds of animation, if the power-switch is still activated,
 
         </div>
         <div class="project-gallery" data-gallery>
-          <div class="project-gallery-title">Photo Gallery</div>
           <div class="gallery-frame">
             <div class="gallery-track">
               <img src="assets/gallery/terminator_1.png" alt="Terminator Eye System gallery image 1" class="gallery-slide">
@@ -373,7 +372,6 @@ After the first 45 seconds of animation, if the power-switch is still activated,
           This was actually my first electronics project than I did with funding from HackClub. I learned about microcontrollers like the XIAO RP2040 which I used for this, as well as how key switches work in terms of wiring and on PCBs. I learned how to use the KiCad software to first import schematics for each component, route copper wiring, assign footprints and finally layout them out on a PCB that I later added silkscreen (printed text) onto. I ran both the ERC & DRC automatic checkers and fixed multiple issues before exporting the gerber files and sending them off to JLCPCB to get them manufactured and shipped to me from China. I designed a case for my Hackpad using the Fusion360 CAD software then got it 3D printed, before learning how to hand solder every electrical connection on the PCB. This project was very fun, I feel I learnt a lot about many different processes and this served as my entrance into the world of electronics and hardware engineering.
         </div>
         <div class="project-gallery" data-gallery>
-          <div class="project-gallery-title">Photo Gallery</div>
           <div class="gallery-frame">
             <div class="gallery-track">
               <img src="assets/gallery/hackpad_1.png" alt="Gethin Hackpad v1 gallery image 1" class="gallery-slide">
@@ -405,7 +403,6 @@ Once the PCB and components arrived, I hand-soldered each and every diode, keysw
 
         </div>
         <div class="project-gallery" data-gallery>
-          <div class="project-gallery-title">Photo Gallery</div>
           <div class="gallery-frame">
             <div class="gallery-track">
               <img src="assets/gallery/keyboard_1.png" alt="Gethin-75 Keyboard gallery image 1" class="gallery-slide">
@@ -442,7 +439,6 @@ Overall, despite the final result not being perfectly as I originally imagined, 
 
         </div>
         <div class="project-gallery" data-gallery>
-          <div class="project-gallery-title">Photo Gallery</div>
           <div class="gallery-frame">
             <div class="gallery-track">
               <img src="assets/gallery/battle_robot_1.png" alt="GG Battle Robot gallery image 1" class="gallery-slide">
@@ -475,7 +471,6 @@ I also incorporated a variable resistor potentiometer into my design which meant
 
         </div>
         <div class="project-gallery" data-gallery>
-          <div class="project-gallery-title">Photo Gallery</div>
           <div class="gallery-frame">
             <div class="gallery-track">
               <img src="assets/gallery/blinky_1.png" alt="IC 555 Blinky gallery image 1" class="gallery-slide">
@@ -502,7 +497,6 @@ The Ghost One project was one I designed with a mate but never actually ended up
 
         </div>
         <div class="project-gallery" data-gallery>
-          <div class="project-gallery-title">Photo Gallery</div>
           <div class="gallery-frame">
             <div class="gallery-track">
               <img src="assets/gallery/ghost_one_1.png" alt="Ghost One gallery image 1" class="gallery-slide">
@@ -529,7 +523,6 @@ This is my relatively simple custom camera system designed around my Bambu Lab's
 
         </div>
         <div class="project-gallery" data-gallery>
-          <div class="project-gallery-title">Photo Gallery</div>
           <div class="gallery-frame">
             <div class="gallery-track">
               <img src="assets/gallery/a1mini_camera_1.png" alt="A1 Mini Camera System gallery image 1" class="gallery-slide">
