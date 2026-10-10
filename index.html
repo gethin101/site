@@ -147,6 +147,37 @@
       margin-top: 8px;
     }
 
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 14px;
+    }
+
+    .skill-block {
+      background: #f8f8f8;
+      border: 1px solid #dddddd;
+      border-radius: 4px;
+      padding: 14px;
+    }
+
+    .skill-block h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.05em;
+      color: #002db3;
+    }
+
+    .skill-image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid #d5d5d5;
+      background: #ececec;
+      margin-bottom: 10px;
+      display: block;
+    }
+
     .project::after {
       content: "";
       display: table;
@@ -234,6 +265,10 @@
       .gallery-arrow {
         width: 30px;
         height: 30px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -592,6 +627,48 @@ This is my relatively simple custom camera system designed around my Bambu Lab's
             </div>
             <button class="gallery-arrow prev" type="button" aria-label="Previous photo">&#10094;</button>
             <button class="gallery-arrow next" type="button" aria-label="Next photo">&#10095;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 8 -->
+      <div class="project" id="project8">
+        <div class="project-title">Skills</div>
+        <div class="description">
+          Since the A1 Mini camera system, I have kept building in a similar style while broadening my core skills across software, digital fabrication and electronics.
+
+          <div class="skills-grid">
+            <div class="skill-block">
+              <h3>Programming & Learning</h3>
+              <img src="assets/gallery/skills/programming.png" alt="Programming skills placeholder image" class="skill-image">
+              <p>
+                I am learning Python in school for GCSE Computer Science, and outside school I am self-teaching HTML, CSS and JavaScript for web development. I also use C++ for Arduino projects, plus MicroPython and CircuitPython when I want to prototype quickly on microcontrollers.
+              </p>
+            </div>
+
+            <div class="skill-block">
+              <h3>3D Printing (Bambu Lab A1 Mini)</h3>
+              <img src="assets/gallery/skills/printer.png" alt="3D printing skills placeholder image" class="skill-image">
+              <p>
+                I have my own Bambu Lab A1 Mini and have been printing for a while for project parts, prototyping and testing ideas. Along the way I have had to deal with real printing issues like maintenance, stringing, retraction tuning, spaghetti failures, filament drying and regular calibration.
+              </p>
+            </div>
+
+            <div class="skill-block">
+              <h3>CAD & Fusion 360</h3>
+              <img src="assets/gallery/skills/cad.png" alt="CAD skills placeholder image" class="skill-image">
+              <p>
+                I originally started learning CAD and Fusion 360 in Year 10, then carried it on outside school. I now design both useful and fun parts to 3D print, and I also did a lot of CAD work for Hack Club Construct.
+              </p>
+            </div>
+
+            <div class="skill-block">
+              <h3>Soldering & Electronics Building</h3>
+              <img src="assets/gallery/skills/soldering.png" alt="Soldering skills placeholder image" class="skill-image">
+              <p>
+                I learnt soldering with help from my dad and now use it across lots of projects. It gives a more professional and durable result than breadboards, even though I started on breadboards with my first Elegoo Arduino starter kit while learning to use basic components and modules.
+              </p>
+            </div>
           </div>
         </div>
       </div>
