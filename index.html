@@ -142,6 +142,11 @@
     .w70 { width: 70%; max-height: 360px; }
     .w100 { width: 100%; max-height: 360px; }
 
+    .terminator-image {
+  width: 45%;
+  max-height: 550px;
+}
+
     .description {
       font-size: 0.98em;
       margin-top: 8px;
@@ -192,6 +197,8 @@
       border-radius: 4px;
       clear: both;
     }
+
+    
 
     .project-gallery-title {
       font-size: 0.9em;
@@ -442,7 +449,7 @@
       <!-- PROJECT 1 -->
       <div class="project" id="project1">
         <div class="project-title">Terminator Eye System</div>
-        <img src="assets/images/project1.jpeg" alt="Terminator Eye System" class="project-image w60">
+        <img src="assets/images/project1.jpeg" alt="Terminator Eye System" class="project-image terminator-image">
         <div class="description">
           This was a Terminator eye system I designed and built for a client. It is built around a raspberry pi pico and is designed to recreate the iconic fade-in, blink and fade-out effect of the real terminator from the movies. My system uses two 3mm red LEDs driven through PWM to create smooth brightness transitions, timed blinks and a clean power-down sequence.
 
@@ -552,7 +559,6 @@ Overall, despite the final result not being perfectly as I originally imagined, 
               <img src="assets/gallery/battle_robot_2.jpeg" alt="GG Battle Robot gallery image 2" class="gallery-slide">
               <img src="assets/gallery/battle_robot_3.png" alt="GG Battle Robot gallery image 3" class="gallery-slide">
               <img src="assets/gallery/battle_robot_4.png" alt="GG Battle Robot gallery image 4" class="gallery-slide">
-              <img src="assets/gallery/battle_robot_5.png" alt="GG Battle Robot gallery image 5" class="gallery-slide">
             </div>
             <button class="gallery-arrow prev" type="button" aria-label="Previous photo">&#10094;</button>
             <button class="gallery-arrow next" type="button" aria-label="Next photo">&#10095;</button>
