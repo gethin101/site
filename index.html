@@ -306,6 +306,16 @@
     let headerClickCount = 0;
     let headerClickTimer = null;
 
+    function updateNavActiveState() {
+      const homeLink = document.querySelector('nav a[data-nav="home"]');
+      const skillsLink = document.querySelector('nav a[data-nav="skills"]');
+      if (!homeLink || !skillsLink) return;
+
+      const isSkillsSelected = window.location.hash === '#skills' || window.location.hash === '#project8';
+      homeLink.classList.toggle('active', !isSkillsSelected);
+      skillsLink.classList.toggle('active', isSkillsSelected);
+    }
+
     function goRandom() {
       const projects = document.querySelectorAll('.project');
       const random = projects[Math.floor(Math.random() * projects.length)];
@@ -394,6 +404,8 @@
     document.addEventListener('DOMContentLoaded', () => {
       applyPerformanceMode();
       document.querySelectorAll('[data-gallery]').forEach(initGallery);
+      updateNavActiveState();
+      window.addEventListener('hashchange', updateNavActiveState);
     });
 
   </script>
@@ -407,7 +419,8 @@
 </div>
 
     <nav>
-      <a href="index.html" class="active">HOME</a>
+      <a href="index.html" class="active" data-nav="home">HOME</a>
+      <a href="#skills" data-nav="skills">SKILLS</a>
       <a href="about.html">ABOUT</a>
       <a href="javascript:goRandom()">RANDOM</a>
       <a href="https://github.com/gethin101/site" target="_blank">SOURCE</a>
@@ -632,7 +645,7 @@ This is my relatively simple custom camera system designed around my Bambu Lab's
       </div>
 
       <!-- PROJECT 8 -->
-      <div class="project" id="project8">
+      <div class="project" id="skills">
         <div class="project-title">Skills</div>
         <div class="description">
           Here are some other skills I have been working on alongside my projects:
